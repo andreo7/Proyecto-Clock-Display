@@ -40,7 +40,7 @@ public class ClockDisplay2
     public ClockDisplay2(int hour, int minute, boolean am)
     {
         if(hour >= 12 && am == true){
-            throw new IllegalArgumentException("Si la hora es mayor igual a 12, no puede ser am");
+            throw new IllegalArgumentException("La hora mayor a 12 debe inicializarse como false");
         }
         if(hour<0 && hour>=13){
             throw new IllegalArgumentException("La hora esta fuera del rango");
@@ -91,8 +91,13 @@ public class ClockDisplay2
 
     private void updateDisplay()
     {
+     if(AM == true){
+         displayString = hours.getDisplayValue() + ":" + 
+                     minutes.getDisplayValue2() + " am";
+    }else if(AM == false){
      displayString = hours.getDisplayValue() + ":" + 
-                     minutes.getDisplayValue2();
+                     minutes.getDisplayValue2() + " pm";
+    }
     
     }
 }

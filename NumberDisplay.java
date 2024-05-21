@@ -35,6 +35,7 @@ public class NumberDisplay
     {
         return value;
     }
+    
     public int getValue2()
     {
         return value2;
