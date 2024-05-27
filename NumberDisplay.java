@@ -75,6 +75,7 @@ public class NumberDisplay
         if((replacementValue >= 0) && (replacementValue < limit)) {
             value = replacementValue;
         }
+        assert repOK();
     }
     
     public void setValue2(int replacementValue)
@@ -82,6 +83,7 @@ public class NumberDisplay
         if((replacementValue >= 0) && (replacementValue < limit)) {
             value2 = replacementValue;
         }
+        assert repOK();
     }
 
     /**
@@ -91,6 +93,7 @@ public class NumberDisplay
     public void increment()
     {
         value = (value + 1) % limit;
+        assert repOK();
     }
     
     public void increment2()
@@ -99,6 +102,7 @@ public class NumberDisplay
         if(value>=limit){
             value = 0;
         }
+        assert repOK();
     }
     
     public void incrementV2()
@@ -107,6 +111,7 @@ public class NumberDisplay
         if(value2>=limit){
             value2 = 0;
         }
+        assert repOK();
     }
     
     public boolean repOK()
@@ -122,7 +127,18 @@ public class NumberDisplay
     }
     return true;
     }
+    
+    private boolean repOK(){
+    if(limit < 0){
+        return false;
+    }else if(value >= limit)
+        return false;
+    else if(value2 >= limit){
+        return false;
+    }else 
+        return limit > 0;
     }
+}
     
 
 
