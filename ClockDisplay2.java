@@ -98,6 +98,13 @@ public class ClockDisplay2
      displayString = hours.getDisplayValue() + ":" + 
                      minutes.getDisplayValue2() + " pm";
     }
-    
+    }
+    private boolean repOK(){
+        if(hours == null || minutes == null) 
+            return false;
+        else if(displayString == null)
+            return false;
+        else{
+            return true;
     }
 }
